@@ -18,14 +18,16 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X) \
-    X("", "sb-date",        15,     1) \
-    X("", "sb-battery",     15,     2) \
-    X("", "sb-volume",      0,      3) \
-    X("", "sb-internet",    15,     4) \
-    X("", "sb-tasks",       60,     5) \
-    X("", "sb-news",        60*5,   6) \
-    /* X("", "sb-mail",        60*5,   7) */ \
-    /* X("", "sb-pacup",       0,      8) */ \
-    X("", "cat /tmp/recordingicon 2>/dev/null",        0,      9)
+/*   icon  command         interval    signal */ \
+    X("", "sb-date",        15,        1) \
+    /* X("", "sb-battery",     15,        2) */ \
+    X("", "sb-volume",      0,         3) \
+    X("", "sb-internet",    15,        4) \
+    X("", "sb-tasks",       60 * 1,    5) \
+    X("", "sb-news",        60 * 5,    6) \
+    /* X("", "sb-mail",        60 * 5,    7) */ \
+    /* X("", "sb-pacup",       60 * 600,  8) */ \
+    X("", "cat /tmp/recordingicon 2>/dev/null; true",    0,         9) \
 
 #endif  // CONFIG_H
+
